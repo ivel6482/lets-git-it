@@ -1,3 +1,5 @@
+Idea from [Gaël Porteu de La Morandière](https://github.com/gaelporteu) be sure to check them out :)
+
 # Install
 
 `npm install`
