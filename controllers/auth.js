@@ -35,7 +35,7 @@ exports.logout = (req, res) => {
 			res.json({ msg: 'Error : Failed to destroy the session during logout.' })
 		req.user = null
 	})
-	res.status(200)
+	res.status(200).json({ msg: 'Logout successful' })
 }
 
 exports.signup = (req, res, next) => {
