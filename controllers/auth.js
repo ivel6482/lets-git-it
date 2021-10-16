@@ -23,7 +23,7 @@ exports.login = (req, res, next) => {
 			if (err) {
 				return next(err)
 			}
-			res.json({ msg: 'Success! You are logged in.' })
+			res.json({ msg: 'Success! You are logged in.', id: user._id })
 		})
 	})(req, res, next)
 }
