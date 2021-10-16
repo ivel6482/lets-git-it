@@ -22,7 +22,7 @@ const HitSchema = new mongoose.Schema(
 			// be an issue when importing from google sheets, in
 			// the mean time, we can set the default to be the date
 			// the hit was added to the database using the line below.
-			// Default: Date.now()
+			default: Date.now(),
 		},
 
 		url: {
@@ -44,24 +44,25 @@ const HitSchema = new mongoose.Schema(
 			type: String,
 			required: [true, 'Please enter the type of the job.'],
 			enum: ['Full Time', 'Part Time', 'Remote', 'Contract', 'Freelance'],
+			default: 'Full Time',
 		},
 
 		contact: {
 			name: {
 				type: String,
-				required: [
-					true,
-					'Please enter the name of the contact at the company.',
-				],
+				// required: [
+				// 	true,
+				// 	'Please enter the name of the contact at the company.',
+				// ],
 				trim: true,
 			},
 
 			position: {
 				type: String,
-				required: [
-					true,
-					'Please enter the position of the contact on the company.',
-				],
+				// required: [
+				// 	true,
+				// 	'Please enter the position of the contact on the company.',
+				// ],
 			},
 
 			email: {
@@ -75,10 +76,10 @@ const HitSchema = new mongoose.Schema(
 
 			contactMessage: {
 				type: String,
-				required: [
-					true,
-					'Please enter the message you sent to the contact at the company.',
-				],
+				// required: [
+				// 	true,
+				// 	'Please enter the message you sent to the contact at the company.',
+				// ],
 				default: '', // Initialize it as an empty array because the sheet does not have a message column.
 			},
 

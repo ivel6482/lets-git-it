@@ -7,7 +7,9 @@ const MongoStore = require('connect-mongo')(session)
 const flash = require('express-flash')
 const logger = require('morgan')
 const connectDB = require('./config/database')
-const mainRoutes = require('./routes/main')
+
+const authRoutes = require('./routes/auth')
+const hitsRoutes = require('./routes/hits')
 
 
 const app = express()
@@ -52,7 +54,8 @@ app.use(flash())
 
 
 //Setup Routes For Which The Server Is Listening
-app.use('/', mainRoutes)
+app.use('/api/v1/auth', authRoutes)
+app.use('/api/v1/hits', hitsRoutes)
 
 
 
